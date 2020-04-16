@@ -88,3 +88,9 @@ pub fn join_test() {
   |> string.join(_, with: "-")
   |> should.equal(_, "Hello-world!")
 }
+
+pub fn unicode_test() {
+    "🌵"
+    |> should.not_equal(_, "5")
+}
+

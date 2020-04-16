@@ -1,7 +1,7 @@
 -module(gleam@string_test).
 -compile(no_auto_import).
 
--export([length_test/0, lowercase_test/0, uppercase_test/0, reverse_test/0, split_test/0, replace_test/0, append_test/0, compare_test/0, concat_test/0, join_test/0]).
+-export([length_test/0, lowercase_test/0, uppercase_test/0, reverse_test/0, split_test/0, replace_test/0, append_test/0, compare_test/0, concat_test/0, join_test/0, unicode_test/0]).
 
 length_test() ->
     gleam@should:equal(gleam@string:length(<<"ß↑e̊">>), 3),
@@ -61,3 +61,6 @@ join_test() ->
         gleam@string:join([<<"Hello">>, <<"world!">>], <<"-">>),
         <<"Hello-world!">>
     ).
+
+unicode_test() ->
+    gleam@should:not_equal(<<"🌵">>, <<"5">>).
